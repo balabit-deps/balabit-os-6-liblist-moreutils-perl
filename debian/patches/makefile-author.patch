@@ -1,0 +1,35 @@
+Description: there might be more people than the author who have a .git directory.
+Origin: vendor
+Forwarded: not-needed
+Author: gregor herrmann <gregoa@debian.org>
+Last-Update: 2015-06-26
+
+--- a/Makefile.PL
++++ b/Makefile.PL
+@@ -64,16 +64,16 @@
+ 
+ use inc::Config::AutoConf::LMU ();
+ 
+-if ( -d ".git" )
+-{
+-    eval "use Sandbox::Tumble ();";
+-    $@ and die $@;
+-    eval "use File::Path ();";
+-    File::Path->import;
+-    -d 't/xs'       and rmtree('t/xs');
+-    -d 't/pureperl' and rmtree('t/pureperl');
+-    Sandbox::Tumble->tumble(qw(t));
+-}
++#if ( -d ".git" )
++#{
++#    eval "use Sandbox::Tumble ();";
++#    $@ and die $@;
++#    eval "use File::Path ();";
++#    File::Path->import;
++#    -d 't/xs'       and rmtree('t/xs');
++#    -d 't/pureperl' and rmtree('t/pureperl');
++#    Sandbox::Tumble->tumble(qw(t));
++#}
+ 
+ inc::Config::AutoConf::LMU->_set_argv(@ARGV);    # XXX hack because we cannot construct for global use
+ 

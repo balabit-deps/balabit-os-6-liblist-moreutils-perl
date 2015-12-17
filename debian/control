@@ -1,0 +1,33 @@
+Source: liblist-moreutils-perl
+Maintainer: Debian Perl Group <pkg-perl-maintainers@lists.alioth.debian.org>
+Uploaders: Krzysztof Krzyzaniak (eloy) <eloy@debian.org>,
+           Damyan Ivanov <dmn@debian.org>,
+           Ansgar Burchardt <ansgar@debian.org>,
+           gregor herrmann <gregoa@debian.org>,
+           Alessandro Ghedini <ghedo@debian.org>
+Section: perl
+Testsuite: autopkgtest-pkg-perl
+Priority: optional
+Build-Depends: debhelper (>= 9.20120312~),
+               libexporter-tiny-perl,
+               perl (>= 5.13.4) | libtest-simple-perl (>= 0.96)
+Standards-Version: 3.9.6
+Vcs-Browser: https://anonscm.debian.org/cgit/pkg-perl/packages/liblist-moreutils-perl.git
+Vcs-Git: git://anonscm.debian.org/pkg-perl/packages/liblist-moreutils-perl.git
+Homepage: https://metacpan.org/release/List-MoreUtils
+
+Package: liblist-moreutils-perl
+Architecture: any
+Depends: ${misc:Depends},
+         ${perl:Depends},
+         ${shlibs:Depends},
+         libexporter-tiny-perl
+Description: Perl module with additional list functions not found in List::Util
+ List::MoreUtils provides some trivial but commonly needed functionality on
+ lists which is not going to go into List::Util.
+ .
+ All of the functions are implementable in only a couple of lines of Perl
+ code. Using the functions from this module however should give slightly better
+ performance as everything is implemented in C. The pure-Perl implementation of
+ these functions only serves as a fallback in case the C portions of this module
+ could not be compiled on this machine.

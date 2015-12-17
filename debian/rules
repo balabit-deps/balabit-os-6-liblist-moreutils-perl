@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+
+%:
+	dh $@
+
+override_dh_clean:
+	dh_clean
+	[ ! -e $(CURDIR)/inc/latest.pm.save ]         || mv -v $(CURDIR)/inc/latest.pm.save $(CURDIR)/inc/latest.pm
+	[ ! -e $(CURDIR)/inc/latest/private.pm.save ] || mv -v $(CURDIR)/inc/latest/private.pm.save $(CURDIR)/inc/latest/private.pm
+
+override_dh_auto_configure:
+	[ ! -e $(CURDIR)/inc/latest.pm ]         || cp -v $(CURDIR)/inc/latest.pm $(CURDIR)/inc/latest.pm.save
+	[ ! -e $(CURDIR)/inc/latest/private.pm ] || cp -v $(CURDIR)/inc/latest/private.pm $(CURDIR)/inc/latest/private.pm.save
+	dh_auto_configure

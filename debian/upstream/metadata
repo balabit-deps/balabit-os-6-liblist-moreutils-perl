@@ -1,0 +1,9 @@
+---
+Archive: CPAN
+Bug-Database: http://rt.cpan.org/Public/Dist/Display.html?Name=List-MoreUtils
+Bug-Submit: bug-List-MoreUtils@rt.cpan.org
+Contact: Tassilo von Parseval <tassilo.von.parseval@rwth-aachen.de>, Adam Kennedy
+  <adamk@cpan.org>, Jens Rehsack <rehsack@cpan.org>
+Name: List-MoreUtils
+Repository: https://github.com/perl5-utils/List-MoreUtils.git
+Repository-Browse: https://github.com/perl5-utils/List-MoreUtils
